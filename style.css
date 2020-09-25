@@ -14,7 +14,7 @@
 Son como variables con SASS
 */
                     
-                    :root {
+                     :root {
                         /*FUENTES*/
                         --fuentePrincipal: 'Staatliches', cursive;
                         --fuenteTexto: 'Open Sans', sans-serif;
@@ -266,6 +266,8 @@ la tome del inspector de elementos del navegador*/
                     .site-footer a {
                         color: var(--negro);
                         text-align: center;
+                        font-style: 2.4rem;
+                        padding: 0 1rem;
                     }
                     
                     .site-footer .menu-principal .current_page_item {
@@ -314,4 +316,14 @@ la tome del inspector de elementos del navegador*/
                         .con-sidebar .sidebar {
                             flex: 0 0 calc(35% - 2rem);
                         }
+                    }
+                    /* No sidebar */
+                    
+                    .no-sidebar {
+                        display: flex;
+                        justify-content: center;
+                    }
+                    
+                    .no-sidebar .contenido-principal {
+                        flex: 0 1 800px;
                     }
