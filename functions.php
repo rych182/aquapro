@@ -33,8 +33,6 @@ function gisea_prototype_scripts_style(){
     
     wp_enqueue_style('lightboxCSS',get_template_directory_uri() . '/css/lightbox.css',array(),'2.11.3');
     
-        
-    
 
     # HOJA DE ESTILOS PRINCIPAL
     # el array() vacio es donde van las dependencias y se deja vacio cuando no las haya

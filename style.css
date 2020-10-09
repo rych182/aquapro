@@ -327,3 +327,47 @@ la tome del inspector de elementos del navegador*/
                     .no-sidebar .contenido-principal {
                         flex: 0 1 800px;
                     }
+                    /*------GALERIA-------*/
+                    
+                    .galeria-imagenes {
+                        display: grid;
+                        /* es como tener 50% 50%, fr significa una fraccion
+                        repeat(2, 1fr); = 50 50 , repeat(4, 1fr); = 25 25 25 25*/
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: repeat(6, auto);
+                        grid-gap: 2rem;
+                    }
+                    
+                    @media (min-width: 768px) {
+                        .galeria-imagenes {
+                            grid-template-columns: repeat(4, 1fr);
+                        }
+                    }
+                    
+                    .galeria-imagenes img {
+                        display: block;
+                    }
+
+.galeria-imagenes li:nth-child(4) {
+    /*selecciono el elemento 4 y que utilice el espacio de la fila 2 a la 4*/
+    grid-row: 2/4;
+    grid-column: 2/3;
+}
+
+@media (min-width: 768px) {
+    .galeria-imagenes li:nth-child(4) {
+        grid-column: 4/5;
+        grid-row: 1/3;
+    }
+}
+
+.galeria-imagenes li:nth-child(6) {
+    grid-row: 5/7;
+}
+
+@media (min-width: 768px) {
+    .galeria-imagenes li:nth-child(6) {
+        grid-column: 2/3;
+        grid-row: 2/4;
+    }
+}
