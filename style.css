@@ -347,27 +347,71 @@ la tome del inspector de elementos del navegador*/
                     .galeria-imagenes img {
                         display: block;
                     }
-
-.galeria-imagenes li:nth-child(4) {
-    /*selecciono el elemento 4 y que utilice el espacio de la fila 2 a la 4*/
-    grid-row: 2/4;
-    grid-column: 2/3;
-}
-
-@media (min-width: 768px) {
-    .galeria-imagenes li:nth-child(4) {
-        grid-column: 4/5;
-        grid-row: 1/3;
-    }
-}
-
-.galeria-imagenes li:nth-child(6) {
-    grid-row: 5/7;
-}
-
-@media (min-width: 768px) {
-    .galeria-imagenes li:nth-child(6) {
-        grid-column: 2/3;
-        grid-row: 2/4;
-    }
-}
+                    
+                    .galeria-imagenes li:nth-child(4) {
+                        /*selecciono el elemento 4 y que utilice el espacio de la fila 2 a la 4*/
+                        grid-row: 2/4;
+                        grid-column: 2/3;
+                    }
+                    
+                    @media (min-width: 768px) {
+                        .galeria-imagenes li:nth-child(4) {
+                            grid-column: 4/5;
+                            grid-row: 1/3;
+                        }
+                    }
+                    
+                    .galeria-imagenes li:nth-child(6) {
+                        grid-row: 5/7;
+                    }
+                    
+                    @media (min-width: 768px) {
+                        .galeria-imagenes li:nth-child(6) {
+                            grid-column: 2/3;
+                            grid-row: 2/4;
+                        }
+                    }
+                    /*------------FORMULARIO DE CONTACTO-------------*/
+                    
+                    .wpc7-form label {
+                        font-weight: 700;
+                    }
+                    
+                    .wpcf7-form .wpcf7-form-control {
+                        width: 100%;
+                        padding: 1rem;
+                        height: 4rem;
+                        border: 1px solid var(--grisClaro);
+                    }
+                    
+                    .wpcf7-form .wpcf7-textarea {
+                        height: 20rem;
+                    }
+                    
+                    .wpcf7-form .wpcf7-submit {
+                        background-color: var(--colorPrimario);
+                        font-size: 2rem;
+                        font-family: var(--fuentePrincipal);
+                        padding: 1.2rem;
+                        height: auto;
+                        color: var(--blanco);
+                    }
+                    
+                    .wpcf7-form .wpcf7-submit:hover {
+                        cursor: pointer;
+                    }
+                    
+                    div.wpcf7-response-output {
+                        background-color: #f7e700;
+                        text-align: center;
+                    }
+                    
+                    div.wpcf7 .ajax-loader {
+                        display: block;
+                        margin: 2rem auto 0 auto;
+                    }
+                    
+                    div.wpcf7-mail-sent-ok {
+                        background-color: #398f14;
+                        color: var(--blanco);
+                    }
