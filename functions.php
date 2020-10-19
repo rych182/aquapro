@@ -33,7 +33,9 @@ function gisea_prototype_scripts_style(){
     
     wp_enqueue_style('lightboxCSS',get_template_directory_uri() . '/css/lightbox.css',array(),'2.11.3');
     
-
+    
+    //wp_enqueue_style('leafletCSS', 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css',array(),'1.7.1');
+    
     # HOJA DE ESTILOS PRINCIPAL
     # el array() vacio es donde van las dependencias y se deja vacio cuando no las haya
     # Es importante poner una version ya que si instalas un plugin de cache y haces modificaciones, con que le pongas 1.0.1, te mostrara las modificaciones
@@ -45,6 +47,8 @@ function gisea_prototype_scripts_style(){
     wp_enqueue_script('scripts',get_template_directory_uri() . '/js/scripts.js',array('jquery','queryslicknav'),'1.0.0',true);
     
     wp_enqueue_script('lightboxJS',get_template_directory_uri() . '/js/lightbox.js',array('jquery'),'2.11.3',true);
+  
+    //wp_enqueue_script('leafletJS','https://unpkg.com/leaflet@1.7.1/dist/leaflet.js',array(),'1.7.1',true);
     
 }
 //Este hook quiere decir que va a cargar hojas de estilo en la parte frontal de la web
