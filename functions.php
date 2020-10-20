@@ -53,4 +53,31 @@ function gisea_prototype_scripts_style(){
 }
 //Este hook quiere decir que va a cargar hojas de estilo en la parte frontal de la web
 add_action('wp_enqueue_scripts','gisea_prototype_scripts_style');
+
+/* ------- IMAGEN HERO --------*/
+
+function aqua_pro_image(){
+    //obtener el id pagina principal
+    //con get_option obtenemos el id que wordpress haya creado de manera dinamica
+    //Con esto le decimos de que página tiene que traer ese valor
+    $front_page_id = get_option('page_on_front');
+    $id_imagen = get_field('imagen_hero', $front_page_id );
+    //obtener la imagen, esto te regresa un arreglo de 4 cajas, por eso el [0]
+    $imagen = wp_get_attachment_image_src($id_imagen,'full')[0];
+
+    //style CSS
+    wp_register_style('custom',false);
+    //Hoja de estilos personalizada que no existe pero quetiene el codigo que puse abajo
+    wp_enqueue_style('custom');
+
+    $imagen_destacada_css = "
+        body.home .site-header {
+            background-image: linear-gradient( rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url($imagen);
+        }
+    ";
+    //esta funcion agrega el codigo css
+    wp_add_inline_style('custom',$imagen_destacada_css);
+}
+add_action('init','aqua_pro_image');
+
 ?>
