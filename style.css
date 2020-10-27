@@ -117,8 +117,8 @@ Son como variables con SASS
                         color: var(--colorPrimario);
                     }
                     
-                    .seccion {
-                        padding: 5rem 0;
+                    .texto-blanco {
+                        color: var(--blanco);
                     }
                     /*-----------HEADER----------------*/
                     /*Imagen principal*/
@@ -474,4 +474,151 @@ la tome del inspector de elementos del navegador*/
                         max-width: 800px;
                         margin: 0 auto;
                         /*Para centrar el texto del parrafo*/
+                    }
+                    
+                    .contenedor-areas {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    
+                    .contenedor-areas .area {
+                        flex: 0 0 100%;
+                        height: 250px;
+                        /*Para que las imagenes no sean más grandes que el degradado negro en el responsive*/
+                        overflow: hidden;
+                        /*puse position relative para que abajo pueda encimar el degradado negro con position absolute*/
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                    @media (min-width: 480px) {
+                        .contenedor-areas .area {
+                            flex: 0 0 50%;
+                        }
+                    }
+                    
+                    @media (min-width: 768px) {
+                        .contenedor-areas .area {
+                            flex: 0 0 25%;
+                            height: 300px;
+                        }
+                    }
+                    
+                    .contenedor-areas .area img {
+                        height: 300px;
+                        /*para que se vea bien cuando se va haciendo más chica la imagen con el cover*/
+                        object-fit: cover;
+                    }
+                    
+                    @media (min-width: 768px) {
+                        .contenedor-areas .area:hover img {
+                            transform: scale(1.1);
+                            transition: transform .5s ease-in-out;
+                        }
+                    }
+                    
+                    .contenedor-areas .area::after {
+                        content: '';
+                        background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        /*para que el degradado se encime sobre las imagenes*/
+                        position: absolute;
+                        top: 0;
+                    }
+                    
+                    .area p {
+                        position: absolute;
+                        margin: auto;
+                        color: var(--blanco);
+                        font-size: 2rem;
+                        font-weight: 900;
+                        z-index: 100;
+                    }
+                    
+                    @media (min-width: 768px) {
+                        .area p {
+                            opacity: 0;
+                            transition: opacity .5s ease-in-out;
+                        }
+                        .area:hover p {
+                            opacity: 1;
+                        }
+                    }
+                    /*--------TESTIMONIALES--------*/
+                    
+                    .testimoniales {
+                        background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(img/testimonial-bg.jpg);
+                        padding: 12rem 0;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                    
+                    .contenedor-testimoniales {
+                        max-width: 800px;
+                        margin: 0 auto;
+                    }
+                    
+                    .testimonial {
+                        color: var(--blanco);
+                    }
+                    
+                    .testimonial blockquote {
+                        position: relative;
+                        padding-left: 12rem;
+                    }
+                    
+                    .testimonial blockquote::before {
+                        position: absolute;
+                        content: '';
+                        display: block;
+                        top: 0;
+                        left: 0;
+                        width: 10rem;
+                        height: 9rem;
+                        background-image: url(img/quote.svg);
+                        background-repeat: no-repeat;
+                    }
+                    
+                    .testimonial-footer {
+                        display: flex;
+                        justify-content: center;
+                    }
+                    
+                    @media (min-width:768px) {
+                        .testimonial-footer {
+                            justify-content: flex-end;
+                        }
+                    }
+                    
+                    .testimonial-footer img {
+                        margin-right: 2rem;
+                        width: 8rem;
+                        height: 8rem;
+                        border-radius: 50%;
+                    }
+                    
+                    .testimonial-footer p {
+                        font-weight: 700;
+                        color: var(--colorPrimario);
+                    }
+                    /*----REESCRIBIT BXSlider--------*/
+                    
+                    .bx-wrapper {
+                        background: transparent;
+                        border: none;
+                        box-shadow: none;
+                    }
+                    
+                    .bx-wrapper .bx-pager.bx-default-pager a,
+                    .bx-wrapper .bx-pager.bx-default-pager a:hover {
+                        background: var(--blanco);
+                    }
+                    
+                    .bx-wrapper .bx-pager.bx-default-pager a.active {
+                        background: var(--colorPrimario);
                     }
