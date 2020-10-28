@@ -16,4 +16,14 @@ jQuery(document).ready(function($) {
             .openPopup();
         */
 
+    window.onscroll = () => {
+        const scroll = window.scrollY; //detecta scroll y lo almacena
+        const headerNav = document.querySelector('.barra-navegacion');
+        //si la cantidad de scroll es mayor a, agrega la clase, si es menor, se remueve
+        if (scroll > 300) {
+            headerNav.classList.add('fixed-top');
+        } else {
+            headerNav.classList.remove('fixed-top');
+        }
+    }
 });

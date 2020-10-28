@@ -164,6 +164,24 @@ Son como variables con SASS
                             justify-content: space-between;
                         }
                     }
+                    /*-------BARRA DE NAVEGACIÓN-------*/
+                    
+                    @media (min-width: 768px) {
+                        .fixed-top {
+                            position: fixed;
+                            width: 100%;
+                            top: 0;
+                            left: 0;
+                            background-color: var(--grisOscuro);
+                            padding: 1rem 5rem;
+                            height: 10rem;
+                            z-index: 100;
+                            transition: all .8s ease;
+                        }
+                        .fixed-top img {
+                            width: 12rem;
+                        }
+                    }
                     
                     .logo {
                         display: flex;
@@ -389,6 +407,10 @@ la tome del inspector de elementos del navegador*/
                     @media (min-width: 768px) {
                         .galeria-imagenes {
                             grid-template-columns: repeat(4, 1fr);
+                        }
+                        .galeria-imagenes li a img:hover {
+                            transform: scale(1.1);
+                            transition: transform .5s ease-in-out;
                         }
                     }
                     
