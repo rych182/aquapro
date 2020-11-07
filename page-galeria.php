@@ -9,7 +9,16 @@ get_header(); ?>
         <div class="contenido-principal">
             
             <?php while ( have_posts() ): the_post(); ?>
-            <h1 class="text-center texto-primario"> <?php the_title(); ?> </h1>
+            <h1 class="text-center texto-primario"> 
+                <?php
+                    //Los titulos de Alberca, Procesos y A&E
+                    //the_title();  
+                ?> 
+                <?php
+                    //La imagen destacada
+                    the_post_thumbnail('blog',array('class' => ('imagen-destacada')));
+                ?>
+            </h1>
 
             <?php 
                 //get_post_gallery: Verifique el contenido de una publicación específica para la galería y, si está presente, devuelve el primero
@@ -38,6 +47,8 @@ get_header(); ?>
                     </li>
                 <?php $i++; endforeach; ?>
             </ul>
+            <?php  ?>
+            
 
             <?php endwhile; ?>
 

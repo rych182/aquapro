@@ -593,6 +593,10 @@ la tome del inspector de elementos del navegador*/
                         background-position: center center;
                     }
                     
+                    .acomodar-parrafo {
+                        padding: 0px 100px;
+                    }
+                    
                     .contenedor-testimoniales {
                         max-width: 800px;
                         margin: 0 auto;
@@ -614,7 +618,7 @@ la tome del inspector de elementos del navegador*/
                         top: 0;
                         left: 0;
                         width: 10rem;
-                        height: 9rem;
+                        height: 19rem;
                         background-image: url(img/quote.svg);
                         background-repeat: no-repeat;
                     }
