@@ -5,7 +5,7 @@
         <ul class="listado-blog">
         <!--Con este loop utilizamos el esqueleto de loop-blog.php-->
             <?php while (have_posts()): the_post();?>
-            <?php //get_template_part('template-parts/loop','blog'); 
+            <?php get_template_part('template-parts/loop','blog'); 
                 //NO FUNCIONO get_template_part('single');
                 comments_template();
             ?>

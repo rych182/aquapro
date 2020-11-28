@@ -1,25 +1,19 @@
-<?php
-/**
- * Template name: Template de galerias
- */
+<!-- PESTAÑA DE SERVICIOS-->
 
-get_header(); ?>
+<?php get_header(); ?>
 
+    <main class="contenedor pagina seccion no-sidebar">
+        <?php while (have_posts()): the_post(); ?>
+
+            <main class="contenido-principal">
+                <?php the_post_thumbnail('blog',array('class' => ('imagen-destacada'))); ?>
+            </main>
+        
+    </main>
+
+    <!-- GALERIA DE SERVICIOS -->
     <main class="contenedor pagina seccion">
         <div class="contenido-principal">
-            
-            <?php while ( have_posts() ): the_post(); ?>
-            <h1 class="text-center texto-primario"> 
-                <?php
-                    //Los titulos de Alberca, Procesos y A&E
-                    //the_title();  
-                ?> 
-                <?php
-                    //La imagen destacada
-                    the_post_thumbnail('blog',array('class' => ('imagen-destacada')));
-                ?>
-            </h1>
-
             <?php 
                 //get_post_gallery: Verifique el contenido de una publicación específica para la galería y, si está presente, devuelve el primero
                 //obtener la galeria de la pagina actual
@@ -47,10 +41,23 @@ get_header(); ?>
                     </li>
                 <?php $i++; endforeach; ?>
             </ul>
-            
-            <?php endwhile; ?>
-
         </div>
     </main>
 
+
+
+    <!--Titulo y link para los comentarios-->
+    <main class="contenedor pagina seccion no-sidebar">
+        <!--Link que me lleva a la entrada-->
+        <div class="contenido">
+            <a href="<?php the_permalink(); ?>">
+                <h1><?php the_title(); ?></h1>
+            </a>
+        </div>
+
+    </main>
+
+
+
+    <?php endwhile; ?>
 <?php get_footer(); ?>

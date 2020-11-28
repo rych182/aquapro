@@ -404,7 +404,9 @@ la tome del inspector de elementos del navegador*/
                     }
                     
                     .no-sidebar .contenido-principal {
-                        flex: 0 1 800px;
+                        flex: 0 1 600px;
+                        /*Para una pequeña separación entre el menú*/
+                        margin-top: 30px;
                     }
                     /*------GALERIA-------*/
                     
@@ -421,9 +423,13 @@ la tome del inspector de elementos del navegador*/
                         .galeria-imagenes {
                             grid-template-columns: repeat(4, 1fr);
                         }
+                        .galeria-imagenes li a img {
+                            border-radius: 10px;
+                        }
                         .galeria-imagenes li a img:hover {
                             transform: scale(1.1);
                             transition: transform .5s ease-in-out;
+                            border: solid 3px white;
                         }
                     }
                     
@@ -556,7 +562,7 @@ la tome del inspector de elementos del navegador*/
                     
                     .contenedor-areas .area::after {
                         content: '';
-                        background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+                        /* background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));*/
                         display: block;
                         width: 100%;
                         height: 100%;
@@ -586,7 +592,7 @@ la tome del inspector de elementos del navegador*/
                     /*--------TESTIMONIALES--------*/
                     
                     .testimoniales {
-                        background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(img/testimonial-bg.jpg);
+                        background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(img/fondo\ 2.jpg);
                         padding: 12rem 0;
                         background-size: cover;
                         background-repeat: no-repeat;
@@ -671,4 +677,101 @@ la tome del inspector de elementos del navegador*/
                     
                     .bx-wrapper .bx-pager.bx-default-pager a.active {
                         background: var(--colorPrimario);
+                    }
+                    /*---------BOTONES--------*/
+                    
+                    .boton {
+                        padding: 1rem 3rem;
+                        display: block;
+                        flex: 1;
+                        text-align: center;
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        font-family: var(--fuentePrimaria);
+                        text-transform: uppercase;
+                        border-radius: .5em;
+                        border: none;
+                    }
+                    
+                    .boton:hover {
+                        cursor: pointer;
+                    }
+                    
+                    @media (min-width: 768px) {
+                        .boton {
+                            display: inline-block;
+                            flex: 0 0 auto;
+                        }
+                    }
+                    
+                    .boton-primario {
+                        background-color: var(--colorPrimario);
+                    }
+                    /*---------COMENTARIOS(algunas clases las creo wordpress y las estoy sobreescribiendo)----------*/
+                    
+                    .comentarios h3 {
+                        font-weight: 700;
+                        text-align: center;
+                    }
+                    
+                    @media (min-width: 992px) {
+                        .comentarios {
+                            width: 60%;
+                        }
+                    }
+                    
+                    .comentarios a {
+                        color: red;
+                    }
+                    
+                    .comentarios .logged-in-as {
+                        display: flex;
+                        justify-content: center;
+                    }
+                    
+                    .comentarios .logged-in-as a:last-of-type {
+                        margin-left: 2rem;
+                    }
+                    
+                    .comment-form p.comment-notes {
+                        display: block;
+                        text-align: center;
+                    }
+                    
+                    .comment-form p {
+                        display: flex;
+                    }
+                    
+                    .comment-form p label {
+                        flex: 0 0 15rem;
+                        text-align: right;
+                        margin-right: 2rem;
+                    }
+                    
+                    .comment-form input:not([type="submit"]),
+                    /*selecciona todos menos el primer input*/
+                    
+                    .comment-form textarea {
+                        /*Va a tomar el resto del contenido y le va a dar la base a label pero flex:1 va a tomar todo el espacio que resta*/
+                        flex: 1;
+                        border: 1px solid var(--grisClaro);
+                    }
+                    
+                    .comment-form-cookies-consent {
+                        align-items: center;
+                        max-width: 80rem;
+                        margin: 0 auto;
+                    }
+                    
+                    p.comment-form-cookies-consent label {
+                        /*Que si crezca pero que tambien pueda hacerse más pequeño y la base va a ser auto*/
+                        flex: 1 1 auto;
+                        font-size: 1.4rem;
+                        font-weight: 400;
+                        line-height: 1.4;
+                    }
+                    
+                    .form-submit {
+                        display: flex;
+                        justify-content: center;
                     }

@@ -1,5 +1,5 @@
 <!--Template de la pestaña servicios-->
-<!--Template blog-->
+<!--Template blog que aparece al darle click a la pestaña de SERVICIOS-->
                     
 
                     <div class="">
